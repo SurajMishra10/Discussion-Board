@@ -1,7 +1,7 @@
 <div class="container">
     <h1 class='heading'>Question</h1>
     <div class="row">
-        <div class="col-8">
+        <div class="col-7">
             <?php
             include("./common/db.php");
             $query = "SELECT * FROM questions where id=$qid";
@@ -21,7 +21,7 @@
             
         </div>
         
-        <div class="col-4">
+        <div class="col-4  ">
             <?php
             $categoryQuery = "select name from category where id=$cid";
             $categoryResult = $conn->query($categoryQuery);
