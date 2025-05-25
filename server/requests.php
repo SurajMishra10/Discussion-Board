@@ -95,9 +95,11 @@ values(NULL, '$username', '$email', '$password','$address');
     }
 
     $questions = $conn->prepare("Insert into `questions`
-(`id`, `title`,`description`,`category_id`,`user_id`)
-values(NULL, '$title', '$description', '$category_id','$user_id');
+(`title`,`description`,`category_id`,`user_id`)
+values(?,?,?,?);
 ");
+
+    $questions->bind_param("ssii", $title, $description, $category_id, $user_id);
 
     $result = $questions->execute();
     $questions->insert_id;
